@@ -36,8 +36,11 @@ public class gui extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				x.deleteSA(Integer.parseInt(nam.getSelectedItem().toString()));
-				update(tmodel);
+				int confirm = JOptionPane.showConfirmDialog(main, "Are you sure?");
+				if(confirm == JOptionPane.YES_OPTION) {
+					x.deleteSA(Integer.parseInt(nam.getSelectedItem().toString()));
+					update(tmodel);
+				}
 			}
 			
 		});
